@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>For My Amazing Sisters</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background: linear-gradient(to right, #2c3e50, #4ca1af);
+            padding: 20px;
+            overflow-x: hidden;
+        }
+        h1 {
+            color: #fff;
+            font-size: 3em;
+            animation: fadeIn 2s ease-in-out;
+        }
+        p {
+            font-size: 1.5em;
+            color: #fff;
+            animation: fadeIn 2s ease-in-out;
+        }
+        .sister-list {
+            margin-top: 30px;
+        }
+        .sister-btn {
+            padding: 15px 30px;
+            font-size: 1.5em;
+            border: none;
+            border-radius: 10px;
+            background: #34495e;
+            color: #fff;
+            cursor: pointer;
+            transition: all 0.3s ease-in-out;
+            margin: 10px;
+            box-shadow: 0px 0px 10px rgba(52, 73, 94, 0.8);
+        }
+        .sister-btn:hover {
+            background: #2c3e50;
+            transform: scale(1.1);
+            box-shadow: 0px 0px 15px rgba(44, 62, 80, 1);
+        }
+        .sister-info {
+            display: none;
+            margin-top: 20px;
+            animation: fadeIn 1s ease-in-out;
+            color: #fff;
+        }
+        .container {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 20px;
+            margin-top: 20px;
+        }
+        .img-box {
+            width: 250px;
+            height: 250px;
+            overflow: hidden;
+            border-radius: 20px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+            transition: transform 0.5s ease-in-out;
+            cursor: pointer;
+        }
+        .img-box:hover {
+            transform: scale(1.1) rotate(3deg);
+        }
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        .popup {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.9);
+            justify-content: center;
+            align-items: center;
+            animation: fadeIn 0.5s ease-in-out;
+        }
+        .popup img {
+            max-width: 100vw;
+            max-height: 100vh;
+            object-fit: cover;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+    </style>
+    <script>
+       function showSisterInfo(id) {
+            let popup = document.getElementById('popup');
+            let content = document.getElementById('popup-content');
+            content.innerHTML = `<img src='it-pennywise.gif' alt='Prank GIF' style='width: 100vw; height: 100vh; object-fit: cover;'>`;
+            popup.style.display = 'flex';
+            setTimeout(() => {
+                popup.style.display = 'none';
+                document.querySelectorAll('.sister-info').forEach(el => el.style.display = 'none');
+                document.getElementById(id).style.display = 'block';
+            }, 3000);
+        }
+        function showPopup(imgSrc) {
+            let popup = document.getElementById('popup');
+            let content = document.getElementById('popup-content');
+            content.innerHTML = `<img src='${imgSrc}' alt='Sister Image'>`;
+            popup.style.display = 'flex';
+        }
+        function closePopup() {
+            document.getElementById('popup').style.display = 'none';
+        }
+    </script>
+</head>
+<body>
+    <h1>My Amazing Sisters</h1>
+    <p>You are always busy but must take care of your awesome brother! 😂</p>
+    <div class="sister-list">
+        <button class="sister-btn" onclick="showSisterInfo('sister1')">Ishani</button>
+        <button class="sister-btn" onclick="showSisterInfo('sister2')">Jaya</button>
+        <button class="sister-btn" onclick="showSisterInfo('sister3')">Monika</button>
+    </div>
+    
+    <div id="popup" class="popup" onclick="closePopup()">
+        <div id="popup-content"></div>
+    </div>
+    
+    <div id="sister1" class="sister-info">
+        <h2>Ishani - Bhagini</h2>
+        <p>She is the most caring and supportive sister I have.</p>
+        <p>She always looking out for me. No matter what happens, she stands by my side with love and wisdom.</p>
+        <div class="container">
+            <div class="img-box" onclick="showPopup('1738768208744.jpg')"><img src="1738768208744.jpg" alt="Ishani"></div>
+            <div class="img-box" onclick="showPopup('IMG-20241011-WA0000.jpg')"><img src="IMG-20241011-WA0000.jpg" alt="Ishani"></div>
+            <div class="img-box" onclick="showPopup('IMG20240326133505.jpg')"><img src="IMG20240326133505.jpg" alt="Ishani"></div>
+        </div>
+    </div>
+    <div id="sister2" class="sister-info">
+        <h2>Jaya - Chhutki</h2>
+        <p>She brings happiness and joy into my life.</p>
+        <p>making every moment special. Her kindness and positivity brighten even the dullest days.</p>
+        <div class="container">
+            <div class="img-box" onclick="showPopup('20231023_105823.jpg')"><img src="20231023_105823.jpg" alt="Jaya"></div>
+            <div class="img-box" onclick="showPopup('1738768579708.JPG')"><img src="1738768579708.JPG" alt="Jaya"></div>
+            <div class="img-box" onclick="showPopup('IMG20240326133419.jpg')"><img src="IMG20240326133419.jpg" alt="Jaya"></div>
+        </div>
+    </div>
+    <div id="sister3" class="sister-info">
+        <h2>Monika - Moti Behen</h2>
+        <p>She is my best friend and always has my back.</p>
+        <p>She always guide me and inspire to do more project </p>
+        <div class="container">
+            <div class="img-box" onclick="showPopup('IMG-20250123-WA0013.jpg')"><img src="IMG-20250123-WA0013.jpg" alt="Monika"></div>
+            <div class="img-box" onclick="showPopup('IMG-20250123-WA0014.jpg')"><img src="IMG-20250123-WA0014.jpg" alt="Monika"></div>
+            <div class="img-box" onclick="showPopup('IMG-20250123-WA0013.jpg')"><img src="IMG-20250123-WA0013.jpg" alt="Monika"></div>
+        </div>
+    </div>
+</body>
+</html>
