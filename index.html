@@ -95,7 +95,9 @@
         }
     </style>
     <script>
-       function showSisterInfo(id) {
+       function showSisterInfo(id, audioId) {
+            let audio = document.getElementById(audioId);
+            audio.play();
             let popup = document.getElementById('popup');
             let content = document.getElementById('popup-content');
             content.innerHTML = `<img src='it-pennywise.gif' alt='Prank GIF' style='width: 100vw; height: 100vh; object-fit: cover;'>`;
@@ -121,15 +123,20 @@
     <h1>My Amazing Sisters</h1>
     <p>You are always busy but must take care of your awesome brother! 😂</p>
     <div class="sister-list">
-        <button class="sister-btn" onclick="showSisterInfo('sister1')">Ishani</button>
-        <button class="sister-btn" onclick="showSisterInfo('sister2')">Jaya</button>
-        <button class="sister-btn" onclick="showSisterInfo('sister3')">Monika</button>
-         <button class="sister-btn" onclick="showSisterInfo('sister4')">prashidhi</button>
+        <button class="sister-btn" onclick="showSisterInfo('sister1', 'audio1')">Ishani</button>
+        <button class="sister-btn" onclick="showSisterInfo('sister2', 'audio2')">Jaya</button>
+        <button class="sister-btn" onclick="showSisterInfo('sister3', 'audio3')">Monika</button>
+        <button class="sister-btn" onclick="showSisterInfo('sister4', 'audio4')">prasidhi</button>
     </div>
     
     <div id="popup" class="popup" onclick="closePopup()">
         <div id="popup-content"></div>
     </div>
+    
+    <audio id="audio1" src="hello how are you.mp3"></audio>
+    <audio id="audio2" src="ishani.mp3"></audio>
+    <audio id="audio3" src="audio3.mp3"></audio>
+    <audio id="audio4" src="audio4.mp3"></audio>
     
     <div id="sister1" class="sister-info">
         <h2>Ishani - Bhagini</h2>
@@ -161,16 +168,16 @@
             <div class="img-box" onclick="showPopup('IMG-20250123-WA0013.jpg')"><img src="IMG-20250123-WA0013.jpg" alt="Monika"></div>
         </div>
     </div>
-       <div id="sister4" class="sister-info">
+    <div id="sister4" class="sister-info">
         <h2>Prasidhi - bestfriend sister</h2>
         <p>She is my best friend and always has my back. she know all truth about me.</p>
         <p>She always guide me and inspire to do more project </p>
         <div class="container">
-            <div class="img-box" onclick="showPopup('IMG-20250123-WA0013.jpg')"><img src="IMG-20250123-WA0013.jpg" alt="Monika"></div>
-            <div class="img-box" onclick="showPopup('IMG-20250123-WA0014.jpg')"><img src="IMG-20250123-WA0014.jpg" alt="Monika"></div>
-            <div class="img-box" onclick="showPopup('IMG-20250123-WA0013.jpg')"><img src="IMG-20250123-WA0013.jpg" alt="Monika"></div>
+            <div class="img-box" onclick="showPopup('1740411515750.jpg')"><img src="1740411515750.jpg" alt="Monika"></div>
+            <div class="img-box" onclick="showPopup('1740411515757.jpg')"><img src="1740411515757.jpg" alt="Monika"></div>
+            <div class="img-box" onclick="showPopup('1740411515762.jpg')"><img src="1740411515762.jpg" alt="Monika"></div>
+            <div class="img-box" onclick="showPopup('1740411515767.jpg')"><img src="1740411515767.jpg" alt="Monika"></div>
         </div>
     </div>
-</body>
 </body>
 </html>
